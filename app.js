@@ -33,7 +33,7 @@ connection.once('open', () => {
 //     });
  
 app.get("/", function(req, res){
-    res.render("landing");
+    res.redirect("/campgrounds");
 });
 
 app.get("/campgrounds", function(req, res){
@@ -76,5 +76,5 @@ app.get("/campgrounds/:id", function(req, res){
 });
 
 app.listen(port, () => {
-    console.log('Yelpcamp has started on port: ${port}');
+    console.log('Yelpcamp has started on port');
 });
