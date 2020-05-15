@@ -33,7 +33,7 @@ connection.once('open', () => {
 //     });
  
 app.get("/", function(req, res){
-    res.redirect("/campgrounds");
+    res.render("landing");
 });
 
 app.get("/campgrounds", function(req, res){
