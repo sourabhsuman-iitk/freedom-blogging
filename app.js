@@ -5,7 +5,7 @@ var mongoose = require("mongoose");
 var Campground = require("./models/campgrounds")
 
 require('dotenv').config();
-const port = process.env.port || 3000;
+const port = process.env.port || 5000;
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true , useCreateIndex: true});
 
