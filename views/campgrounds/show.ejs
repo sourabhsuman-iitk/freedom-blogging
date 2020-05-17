@@ -1,0 +1,65 @@
+<%- include('../partials/header'); -%>
+
+<main class="show-main">
+    <div>
+    <div class="section-heading">
+        <%= campground.name %>
+    </div>
+    <section class="post-section">
+        
+        <div class="image-section"  >
+            <div class="post-image" style="background-image:url('<%= campground.image %>')">
+            </div>
+            <!-- <img class="post-image" src="<%= campground.image %>" alt="img"> -->
+        </div>
+        
+        <div class="user-info">
+            Submitted By <strong><%= campground.author.username %></strong>
+        </div>
+        <hr>
+        <div class="post-content">
+            
+            <p><%= campground.description %></p>
+       
+        </div>
+        <% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
+            <div class="horizontal-align">
+                <a class="edit-button" href="/campgrounds/<%= campground._id %>/edit">Edit</a>
+                <form action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
+                    <button class="delete-button">Delete</button>
+                </form>
+            </div>
+           
+        <% } %>
+        <hr>
+        <div class="show-comments">
+            Comments
+        </div>
+        
+        <% campground.comments.forEach(function(comment){ %>
+            <p class="comment-line"><strong><%= comment.author.username %></strong> - <%= comment.text %></p>
+            <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+                <div class="horizontal-align">
+                <a class="comment-edit-button" href="/campgrounds/<%=campground._id %>/comments/<%=comment._id%>/edit">Edit</a>
+                <form action="/campgrounds/<%=campground._id %>/comments/<%=comment._id%>?_method=DELETE" method="POST">
+                    <input type="submit" class="comment-delete-button" value="Delete">
+                </form>
+            </div>
+            <% } %>
+        
+        <% }); %>
+        <p>
+            <a class="comment-button" href="/campgrounds/<%= campground._id %>/comments/new">Add New Comment</a>
+        </p>
+    
+    </section>
+    </div>
+</main>
+
+
+
+
+
+<%- include('../partials/footer'); -%>
+
+

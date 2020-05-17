@@ -1,0 +1,18 @@
+<%- include('../partials/header'); -%>
+<div class="box">
+    <div class="box-heading">
+        Edit Comment
+    </div>
+
+    <div class="align-vertical">
+        <form class="form-width" action="/campgrounds/<%= campground_id %>/comments/<%= comment._id%>?_method=PUT" method="POST">
+            <input class="place-holder" type="text" name="comment[text]" value="<%= comment.text%>">
+            
+            <button class="box-button" >Submit</button>
+        </form>
+        
+    </div>
+    <a class="back-button" href="/campgrounds">Go Back</a>
+</div>
+
+<%- include('../partials/footer'); -%>

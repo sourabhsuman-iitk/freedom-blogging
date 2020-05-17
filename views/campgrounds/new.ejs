@@ -1,0 +1,20 @@
+<%- include('../partials/header'); -%>
+<div class="box">
+    <div class="box-heading">
+        Create a new Campground 
+    </div>
+    <div class="align-vertical">
+    <form action="/campgrounds" method="POST">
+        
+            <input class="place-holder" type="text" name="name" placeholder="Campground Name">
+            <input class="place-holder" type="text" name="image" placeholder="Image url">
+            <textarea class="place-holder" name="description" >Description</textarea>
+            <button class="box-button">Submit</button>
+        
+    </form>
+    </div>
+ <a class="back-button" href="/campgrounds">Go Back</a>
+
+</div>
+
+<%- include('../partials/footer'); -%>

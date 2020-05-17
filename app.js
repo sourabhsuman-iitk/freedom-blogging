@@ -2,78 +2,61 @@ var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
-var Campground = require("./models/campgrounds")
+var flash = require("connect-flash");
+var passport = require("passport");
+var LocalStrategy = require("passport-local");
+methodOverride = require("method-override");
+var Campground = require("./models/campground");
+var Comment = require("./models/comment");
+var User = require("./models/user");
+var seedDB = require("./seeds");
+
+var commentRoutes = require("./routes/comments");
+var campgroundRoutes = require("./routes/campgrounds");
+var indexRoutes = require("./routes/index");
 
 require('dotenv').config();
 const port = process.env.PORT || 5000;
 const uri = process.env.ATLAS_URI;
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true , useCreateIndex: true});
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true , useCreateIndex: true, useFindAndModify: false });
 
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.set("view engine", "ejs");
+app.use(express.static(__dirname + "/public"));
+app.use(methodOverride("_method"));
+app.use(flash());
 
 const connection = mongoose.connection;
 connection.once('open', () => {
     console.log("Mongodb database connection established successfully");
 });
-// Campground.create(
-//    { 
-//     name: "Bear creek" ,
-//      image: "https://images.unsplash.com/photo-1537565266759-34bbc16be345?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
-//      description: "This is a creek thats a usual spot for bears"
-    
-//     }, function(err, campground){
-//         if(err){
-//             console.log(err);
-//         } else {
-//             console.log("Newly created campground");
-//             console.log(campground);
-//         }
-//     });
  
-app.get("/", function(req, res){
-    res.render("landing");
+//seedDB(); //seed the database
+ 
+//Passport config
+app.use(require("express-session")({
+    secret: "You are awesome",
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+app.use(function(req, res, next){
+    res.locals.currentUser = req.user;
+    res.locals.error = req.flash("error");
+    res.locals.success = req.flash("success");
+    next(); 
 });
 
-app.get("/campgrounds", function(req, res){
+app.use(indexRoutes);
+app.use("/campgrounds", campgroundRoutes);
+app.use("/campgrounds/:id/comments", commentRoutes);
 
-    Campground.find({}, function(err, allCampgrounds){
-        if(err){
-            console.log(err)
-        } else {
-            res.render("index", {campgrounds: allCampgrounds});
-        }
-    });
-});
-
-app.post("/campgrounds", function(req, res){
-    var name = req.body.name;
-    var image = req.body.image;
-    var desc = req.body.description;
-    var newCampground = {name: name, image: image, description: desc}
-    Campground.create(newCampground, function(err, newlyCreated){
-        if(err){
-            console.log(err)
-        } else {
-            res.redirect("/campgrounds");
-        }
-    });
-});
-
-app.get("/campgrounds/new", function(req, res){
-    res.render("new.ejs");
-});
-
-app.get("/campgrounds/:id", function(req, res){
-    Campground.findById(req.params.id, function(err, foundCampground){
-        if(err){
-            console.log(err)
-        } else {
-            res.render("show", {campground: foundCampground});
-        }
-    }); 
-});
 
 app.listen(port, () => {
     console.log('Yelpcamp has started on port');

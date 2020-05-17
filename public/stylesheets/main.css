@@ -1,0 +1,361 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.body-bg {
+    margin:auto auto;
+    height:700px;
+    width: 100%;
+    background: url("freedom.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.border-bottom {
+    border-bottom: 2px solid gray;
+}
+.brand-name {
+    font-weight: 500;
+    font-family: 'Noto Sans', sans-serif;
+}
+.landing {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.landing-tagline {
+    margin-top: 14rem;
+    color: #F9FAF4;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+    0px 8px 13px rgba(0,0,0,0.1),
+    0px 18px 23px rgba(0,0,0,0.1)   ;
+    font-size: 4.3rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.all-campgrounds-link {
+    font-size: 1.3rem;
+    color:#F9FAF4 ;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+    0px 5px 10px rgba(0,0,0,0.1),
+    0px 12px 17px rgba(0,0,0,0.1)   ;
+}
+.all-campgrounds-link:hover {
+    color: #B7C7D7;
+}
+body {
+    background: #FFFF;
+    font-family: 'Noto Sans', sans-serif;
+}
+.heading-div {
+    margin:0 10% 40px 10% ;
+    background: url('warm-sky.jpg');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.heading-text {
+    margin: 4.5rem auto 20px auto ;
+    font-size: 3rem;
+    font-weight: 600;
+    text-shadow: 0px 4px 3px rgba(255, 253, 253, 0.4),
+    0px 5px 10px rgba(255, 255, 255, 0.1),
+    0px 12px 17px rgba(255, 255, 255, 0.1)   ;
+}
+.subheading-text {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+.add-campgrounds-button {
+    padding: 8px 15px;
+    margin: 10px 0;
+    color: #F9FAF4;
+    border: none;
+    border-radius:4px ;
+    background: #2C3232;
+}
+.add-campgrounds-button:hover {
+    color: wheat;
+    text-decoration: none;
+}
+.cover-card {
+    margin: auto 10% ;
+}
+
+.card-grid{
+    display: grid;
+    grid-gap: 4.2rem 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 250px;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #353535;
+    font-size: 3rem;
+    color: #fff;
+    box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+    transition: all 350ms;
+    overflow: hidden;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+ }
+  
+.card:hover {
+    box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+    transform: translateY(-3px) scale(1.05);
+ }
+
+ .text-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+ .campground-name {
+     font-size: 1.15rem;
+     font-weight: 600;
+     margin-bottom: 5px;
+ }
+ .more-info-button {
+    padding: 5px 10px;
+    margin: 10px 0;
+    font-size: 0.8rem;
+    color: #F9FAF4;
+    border: none;
+    border-radius:4px ;
+    background: #2C3232;
+ }
+ .more-info-button:hover {
+    color: wheat;
+    text-decoration: none;
+}
+.show-main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.section-heading {
+    font-size: 2rem;
+    margin-top: 35px;
+    font-weight: 600;
+}
+.post-section{
+    display:flex;
+    flex-direction: column  ;
+    width:800px;
+    height:auto;
+    position: relative;
+    background-color: white;
+    border: 0.5px solid rgba(178, 180, 182,0.7);
+    border-radius:3px;
+    margin-top: 5px;
+    margin-bottom: 50px;
+
+}
+.image-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-auto-rows: 500px;
+}
+.post-image{
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.user-info{
+    font-size: 1rem;
+    color: #696D6E;
+    padding: 15px 10px 0 10px;
+}
+.post-content{
+    padding: 0 10px;
+    font-size: 1.1rem;
+}
+.horizontal-align {
+    display: flex;
+    flex-direction: row;
+}
+.edit-button {
+    max-width: 52px;
+    font-size: 1rem;
+    margin: 5px 10px;
+    padding: 2px 10px;
+    
+    color:black;
+    border:1px solid #2C3232;
+    border-radius: 3px;
+
+}
+.edit-button:hover {
+    border-color: #8A8A7F;
+    color: black;
+    text-decoration: none;
+}
+.delete-button {
+    font-size: 1rem;
+    margin: 5px 10px;
+    padding: 2px 10px;
+    background: white;
+    color:black;
+    border:1px solid rgb(173, 21, 21);
+    border-radius: 3px;
+}
+.show-comments {
+    font-size: 1.2rem;
+    margin: 0 10px;
+}
+.comment-line {
+    margin: 5px 10px;
+}
+.edit-button {
+    max-width: 52px;
+    font-size: 1rem;
+    margin: 5px 10px;
+    padding: 2px 10px;
+    
+    color:black;
+    border:1px solid #2C3232;
+    border-radius: 3px;
+
+}
+.edit-button:hover {
+    border-color: #8A8A7F;
+    color: black;
+    text-decoration: none;
+}
+.delete-button {
+    font-size: 1rem;
+    margin: 5px 10px;
+    padding: 2px 10px;
+    background: white;
+    color:black;
+    border:1px solid rgb(173, 21, 21);
+    border-radius: 3px;
+}
+.comment-button {
+    font-size: 1rem;
+    margin: 5px 0px;
+    padding: 2px 10px;
+    color:#191FC1;
+}
+.comment-button:hover {
+    text-decoration: none;
+}
+
+.comment-edit-button {
+    max-width: 45px;
+    font-size: 0.9rem;
+    margin: 5px 6px 5px 10px;
+    padding: 2px 8px;
+    
+    color:black;
+    border:1px solid #2C3232;
+    border-radius: 3px;
+
+}
+.comment-edit-button:hover {
+    border-color: #8A8A7F;
+    color: black;
+    text-decoration: none;
+}
+.comment-delete-button {
+    font-size: 0.9rem;
+    margin: 5px 6px 5px 10px;
+    padding: 2px 8px;
+    background: white;
+    color:black;
+    border:1px solid rgb(173, 21, 21);
+    border-radius: 3px;
+}
+
+.box {
+    margin: 80px auto 40px auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: #2F2F33;
+    border: 1px solid rgba(178, 180, 182,0.7);
+    border-radius: 8px;
+    width: 600px;
+    padding-bottom: 20px;
+}
+.box-heading {
+    font-size: 2rem;
+    font-weight:500;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    color:#F8F9FA;
+}
+
+.align-vertical {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.place-holder {
+    margin: 0 4% 15px 4%;
+    width:92% ;
+    padding:10px 15px;
+    border-radius: 6px;
+    border: none;
+    background: white;
+    outline: none;
+}
+.form-width {
+    width: 100%;
+}
+.box-button {
+    margin-left: 40%;
+    margin-right: 40%;
+    width: 20%;
+    padding: 7px 0;
+    border-radius: 10px;
+    border: none;
+}
+.back-button {
+    color: #F8F9FA;
+    
+    padding: 17px;
+}
+.back-button:hover {
+    text-decoration: none;
+    color: wheat;
+}
+.bottom-margin {
+    margin-top: 4rem;
+}
+/* .footer-box {
+    
+    margin-top: auto;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 4rem;
+    background: #2C3232;
+}
+.footer-text {
+    color: white;
+} */

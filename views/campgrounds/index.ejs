@@ -1,0 +1,38 @@
+<%- include('../partials/header'); -%>
+
+
+<header class="heading-div">
+        <p class="heading-text">
+        Welcome to Freedom Camping
+        </p> 
+        <p class="subheading-text">Collection of our favourite campgrounds</p>
+        <p>
+            <a class="add-campgrounds-button" href="/campgrounds/new">Add New Campgrounds</a>
+        </p>
+</header>
+ 
+    
+<div class="cover-card">
+    <div class="card-grid">
+        <% campgrounds.forEach(function(campground){ %>
+            <div class="single-card">
+                <div class="card" style="background-image:url('<%= campground.image %>')">
+                
+                </div>
+                <div class="text-content">
+                    <p class="campground-name">
+                        <%= campground.name %>
+                    </p>
+                    <a class="more-info-button" href="/campgrounds/<%= campground._id%>" class="btn btn-primary">More Info</a>
+                </div>
+            </div>
+        <% }); %> 
+    </div>
+    <div class="bottom-margin"></div>
+</div>
+        
+ 
+
+
+
+<%- include('../partials/footer'); -%>
