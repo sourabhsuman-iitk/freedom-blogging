@@ -29,7 +29,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
         if(err){
             console.log(err)
         } else {
-            res.redirect("/campgrounds");
+            res.redirect("/blogs");
         }
     });
 });
@@ -58,9 +58,9 @@ router.get("/:id/edit", middleware.checkCampgroundOwnership, function(req, res){
 router.put("/:id", middleware.checkCampgroundOwnership, function(req, res){
     Campground.findByIdAndUpdate(req.params.id, req.body.campground,{new: true},function(err, updatedCampground){
         if(err){
-            res.redirect("/campgrounds");
+            res.redirect("/blogs");
         } else {
-            res.redirect("/campgrounds/" + req.params.id);
+            res.redirect("/blogs/" + req.params.id);
         }
     });
 });
@@ -69,9 +69,9 @@ router.put("/:id", middleware.checkCampgroundOwnership, function(req, res){
 router.delete("/:id", middleware.checkCampgroundOwnership, function(req, res){
     Campground.findByIdAndRemove(req.params.id, function(err){
         if(err){
-            res.redirect("/campgrounds");
+            res.redirect("/blogs");
         } else {
-            res.redirect("/campgrounds");
+            res.redirect("/blogs");
         }
     });
 }); 

@@ -54,8 +54,8 @@ app.use(function(req, res, next){
 });
 
 app.use(indexRoutes);
-app.use("/campgrounds", campgroundRoutes);
-app.use("/campgrounds/:id/comments", commentRoutes);
+app.use("/blogs", campgroundRoutes);
+app.use("/blogs/:id/comments", commentRoutes);
 
 
 app.listen(port, () => {

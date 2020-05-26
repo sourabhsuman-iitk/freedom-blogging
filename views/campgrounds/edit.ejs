@@ -5,14 +5,14 @@
         Edit <%= campground.name %>
     </div>
     <div class="align-vertical">
-        <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST">
+        <form action="/blogs/<%= campground._id %>?_method=PUT" method="POST">
             <input class="place-holder" type="text" name="campground[name]" value="<%= campground.name %>">
             <input class="place-holder" type="text" name="campground[image]" value="<%= campground.image %>">
             <input class="place-holder" type="text" name="campground[description]" value="<%= campground.description %>">
             <button  class="box-button">Submit</button>
         </form>
     </div>
-    <a class="back-button" href="/campgrounds">Go Back</a>
+    <a class="back-button" href="/blogs">Go Back</a>
 
 </div>
 

@@ -9,40 +9,31 @@
     <title>Freedom</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-        <div class="container">
-        <a class="navbar-brand brand-name" href="/">Freedom</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-            <ul class="navbar-nav ">
-                <% if(!currentUser){ %>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/campgrounds">Campgrounds</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/register"> SignUp</a>
-                    </li>
-                    <li class="nav-item ml-3">
-                          <a class="nav-link" href="/login">Login</a>
-                    </li>
-                <% } else { %>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/campgrounds">Campgrounds</a>
-                    </li>
-                    <li class="nav-item ml-3">
-                       <a class="nav-link" href="#">Signed in as <%= currentUser.username %></a> 
-                    </li>
-                    <li class="nav-item ml-3">
-                        <a class="nav-link" href="/logout">Logout</a>
-                    </li>
-                <% } %>
-                
-                  
-            </ul>
+    <header>
+        <div class="header-class">
+            <div class="logo-container">
+                <a class="logo" href="/">Freedom</a>
+            </div>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <nav>
+                <ul class="nav-links">
+                    <% if(!currentUser){ %>
+                    <li> <a class="nav-link" href="/blogs">Blogs</a></li>
+                    <li> <a class="nav-link" href="/login">Login</a></li>
+                    <li> <a class="nav-link" href="/register"> Signup</a></li>
+                    <% } else { %>
+                    <li> <a class="nav-link" href="/blogs">Blogs</a></li>
+                    <li> <a class="nav-link" href="#">Signed in as <%= currentUser.username %></a> </li>
+                    <li> <a class="nav-link" href="/logout">Logout</a></li>
+                    <% } %>
+                </ul>
+            </nav>
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span></span> 
+            </label>
         </div>
-      </nav>
+      
+    </header>
 
       <div class="container">
        <% if(error && error.length > 0){ %>
