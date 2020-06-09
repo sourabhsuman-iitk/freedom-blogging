@@ -79,10 +79,10 @@ router.post("/saved/:id/:userid", middleware.isLoggedIn, function(req, res){
           if(!isSaved){
             campground.saved.push(userID);
             campground.save();
-            req.flash("success", "Blog saved");
+            req.flash("success", "Blog pinned");
             res.redirect('/blogs/' + campground.slug);
           } else {
-            req.flash("error", "Blog already saved");
+            req.flash("error", "Blog already pinned");
             res.redirect("back");
           }
           

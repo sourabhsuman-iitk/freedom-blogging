@@ -9,6 +9,14 @@
         
         <div class="image-section"  >
             <div class="post-image" style="background-image:url('<%= campground.image %>')">
+                <% if(currentUser){ %>
+                    <form  action="/users/saved/<%= campground._id %>/<%= currentUser._id %>" method="POST">
+                        <button class="remove-button-default-margin" type="submit"> <i class="fas fa-thumbtack white-circle-pin"></i></button>
+                    </form> 
+                    <% } else { %>
+
+                        <a  class="remove-button-default-margin" href="/login"><i class="fas fa-thumbtack white-circle-pin"></i></a>
+                        <% }  %>
             </div>
             
         </div>
@@ -16,14 +24,6 @@
         <div class="user-info">
             Submitted By <a href="/users/<%= campground.author.id %>"><strong><%= campground.author.username %></strong></a> <span class="shift-right"><%= campground.createdAt.toLocaleDateString() %></span>
         </div>
-        <% if(currentUser){ %>
-        <form class="form-width" action="/users/saved/<%= campground._id %>/<%= currentUser._id %>" method="POST">
-            <button class="remove-button-default" type="submit"><img class="bookmark-button" src="https://res.cloudinary.com/sdevblog/image/upload/v1591643985/bookmark_1_zalgjm.png" alt="pin"></button>
-        </form> 
-        <% } else { %>
-
-            <a  class="remove-button-default" href="/login"><img class="bookmark-button" src="https://res.cloudinary.com/sdevblog/image/upload/v1591643985/bookmark_1_zalgjm.png" alt="pin"></a>
-            <% }  %>
         <hr>
         <div class="post-content">
              

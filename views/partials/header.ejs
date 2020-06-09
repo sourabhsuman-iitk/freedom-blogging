@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
 
     <link rel="stylesheet" href="/stylesheets/main.css">
     <title>Freedom</title>
@@ -54,8 +54,8 @@
                             
                         </li>    
                     <!-- <li> <a class="nav-link" href="/blogs"><img src="https://res.cloudinary.com/sdevblog/image/upload/v1591611351/edit_qg3zrr.png" alt="Blogs" height="28px"></a></li> -->
-                    <li> <a class="nav-link" href="/users/<%= currentUser._id%>"><img class="sizing-logo" src="https://res.cloudinary.com/sdevblog/image/upload/v1591611014/user_1_bagga4.png" alt="user" > </a> </li>
-                    <li> <a class="nav-link" href="/users/saved/<%= currentUser._id%>"> <img class="sizing-logo" src="https://res.cloudinary.com/sdevblog/image/upload/v1591610884/bookmark_pfc54t.png" alt="saved" > </a></li>
+                    <li> <a class="nav-link" href="/users/<%= currentUser._id%>"><i class="fas fa-user navbar-user-logo" ></i></a> </li>
+                    <li> <a class="nav-link" href="/users/saved/<%= currentUser._id%>"> <i class="fas fa-thumbtack navbar-pin-logo" ></i></a></li>
                     <li> <a class="nav-link" href="/logout">Logout</a></li>
                     <% } %>
                 </ul>
