@@ -75,7 +75,7 @@ router.get("/new", middleware.isLoggedIn, function(req, res){
     res.render("campgrounds/new");
 });
 
-router.get("/:slug", middleware.isLoggedIn, function(req, res){
+router.get("/:slug", function(req, res){
     Campground.findOne({slug: req.params.slug}).populate("comments").exec(function(err, foundCampground){
         
         if(err || !foundCampground){

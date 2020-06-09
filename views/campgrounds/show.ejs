@@ -16,9 +16,11 @@
         <div class="user-info">
             Submitted By <a href="/users/<%= campground.author.id %>"><strong><%= campground.author.username %></strong></a> <span class="shift-right"><%= campground.createdAt.toLocaleDateString() %></span>
         </div>
+        <% if(currentUser){ %>
         <form class="form-width" action="/users/saved/<%= campground._id %>/<%= currentUser._id %>" method="POST">
             <button class="remove-button-default" type="submit"><img class="bookmark-button" src="https://res.cloudinary.com/sdevblog/image/upload/v1591643985/bookmark_1_zalgjm.png" alt="pin"></button>
         </form> 
+        <% } %> 
         <hr>
         <div class="post-content">
              
