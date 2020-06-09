@@ -11,7 +11,7 @@ var Campground = require("../models/campground");
 router.get("/", function(req, res){
     res.redirect("/blogs");
 });
-
+ 
 
 //root route
 router.get("/register", function(req, res){

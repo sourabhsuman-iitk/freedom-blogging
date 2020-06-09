@@ -20,7 +20,10 @@
         <form class="form-width" action="/users/saved/<%= campground._id %>/<%= currentUser._id %>" method="POST">
             <button class="remove-button-default" type="submit"><img class="bookmark-button" src="https://res.cloudinary.com/sdevblog/image/upload/v1591643985/bookmark_1_zalgjm.png" alt="pin"></button>
         </form> 
-        <% } %> 
+        <% } else { %>
+
+            <a  class="remove-button-default" href="/login"><img class="bookmark-button" src="https://res.cloudinary.com/sdevblog/image/upload/v1591643985/bookmark_1_zalgjm.png" alt="pin"></a>
+            <% }  %>
         <hr>
         <div class="post-content">
              
