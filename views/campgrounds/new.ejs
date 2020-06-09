@@ -1,20 +1,27 @@
 <%- include('../partials/header'); -%>
 <div class="box">
     <div class="box-heading">
-        Create a new Blog 
+        Create New Blog 
     </div>
     <div class="align-vertical">
-    <form action="/blogs" method="POST">
-        
+    <form action="/blogs" method="POST" enctype="multipart/form-data">
+            <label class="label-all" for="image">Title</label>
             <input class="place-holder" type="text" name="name" placeholder="Blog Title">
-            <input class="place-holder" type="text" name="image" placeholder="Image url">
-            <textarea class="place-holder" name="description" >Description</textarea>
+            
+            <label class="label-all" for="image">Image</label>
+            <input class="place-holder" type="file" id="image" name="image" accept="image/*" required>
+            
+            <label class="label-all" for="image">Short Description</label>
+            <textarea maxlength="120" class="place-holder" name="description" required></textarea>
+            
+            <label class="label-all" for="image">Blog Content</label>
+            <textarea class="place-holder-large" name="content" required></textarea>
+            
             <button class="box-button">Submit</button>
         
     </form>
     </div>
- <a class="back-button" href="/blogs">Go Back</a>
+ <a class="back-button" href="/blogs">Go Back</a> 
 
 </div>
 
-<%- include('../partials/footer'); -%>

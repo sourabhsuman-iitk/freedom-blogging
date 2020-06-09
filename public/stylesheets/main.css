@@ -3,15 +3,6 @@
     padding: 0px;
     box-sizing: border-box;
 }
-.body-bg {
-    margin:auto auto;
-    height:700px;
-    width: 100%;
-    background: url("freedom.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
 .border-bottom {
     border-bottom: 2px solid gray;
 }
@@ -19,128 +10,141 @@
     font-weight: 500;
     font-family: 'Noto Sans', sans-serif;
 }
-.landing {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.landing-tagline {
-    margin-top: 14rem;
-    color: #F9FAF4;
-    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
-    0px 8px 13px rgba(0,0,0,0.1),
-    0px 18px 23px rgba(0,0,0,0.1)   ;
-    font-size: 4.3rem;
-    font-weight: 600;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.all-campgrounds-link {
-    font-size: 1.3rem;
-    color:#F9FAF4 ;
-    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
-    0px 5px 10px rgba(0,0,0,0.1),
-    0px 12px 17px rgba(0,0,0,0.1)   ;
-}
-.all-campgrounds-link:hover {
-    color: #B7C7D7;
-}
+
 body {
     background: #FFFF;
     font-family: 'Noto Sans', sans-serif;
 }
-.heading-div {
-    margin:0 10% 40px 10% ;
-    background: url('warm-sky.jpg');
+#icon-size {
+    font-size: 28px;
+    
+}
+.profile-heading-div {
+    margin:10px 10% 10px 10% ;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    border:none;
+    background: white;
 }
-.heading-text {
-    margin: 4.5rem auto 20px auto ;
-    font-size: 3rem;
-    font-weight: 600;
-    text-shadow: 0px 4px 3px rgba(255, 253, 253, 0.4),
+.profile-heading-text {
+    margin-bottom: 10px;
+    padding-top: 1rem;
+    font-size: 2.5rem;
+    text-shadow: 0px 4px 3px rgba(165, 208, 228, 0.4),
     0px 5px 10px rgba(255, 255, 255, 0.1),
     0px 12px 17px rgba(255, 255, 255, 0.1)   ;
+    padding-bottom: 0;
 }
 .subheading-text {
     font-size: 1.2rem;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
+    color: rgb(66, 64, 64);
 }
 .add-campgrounds-button {
-    padding: 8px 15px;
-    margin: 10px 0;
-    color: #F9FAF4;
-    border: none;
-    border-radius:4px ;
-    background: #2C3232;
+    padding: 0 8px;
+    font-weight: 600;
+    margin: 8px 0;
+    color: rgb(31, 142, 156);
 }
 .add-campgrounds-button:hover {
-    color: wheat;
+    color: rgb(9, 108, 121);
     text-decoration: none;
 }
-.cover-card {
-    margin: auto 10% ;
-}
 
-.card-grid{
-    display: grid;
-    grid-gap: 4.2rem 1.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-auto-rows: 250px;
-}
-.card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-    font-size: 3rem;
-    color: #fff;
-    box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
-    height: 100%;
-    width: 100%;
-    border-radius: 4px;
-    transition: all 350ms;
-    overflow: hidden;
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
- }
-  
-.card:hover {
-    box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
-    transform: translateY(-3px) scale(1.05);
- }
-
- .text-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
- }
- .campground-name {
-     font-size: 1.15rem;
-     font-weight: 600;
-     margin-bottom: 5px;
- }
  .more-info-button {
-    padding: 5px 10px;
-    margin: 10px 0;
+    padding: 0px 0px;
+    margin: 5px 0;
     font-size: 0.8rem;
-    color: #F9FAF4;
-    border: none;
-    border-radius:4px ;
-    background: #2C3232;
+    color: rgb(130, 130, 136);
+    
  }
  .more-info-button:hover {
-    color: wheat;
+    color: rgb(10, 10, 10);
     text-decoration: none;
 }
+.blog-index {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 60px;
+}
+.grid-card {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    width: 800px;
+    border:0.1px solid rgba(173, 171, 171, 0.1);
+    border-radius: 3px;
+}
+.card-text {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 5px 5px 10px;
+}
+.card-heading {
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    margin-top: 5px;
+}
+.card-body {
+    font-size: 0.97rem;
+    padding: 0;
+    margin-top:6px ;
+    color: gray;
+}
+.card-image {
+    margin-right: 0;
+    margin-left: auto;
+    float: right;
+}
+.background-image {
+    margin-right: 0;
+    margin-left: auto;
+    float: right;
+    height: 200px;
+    width: 220px;
+    overflow: hidden;
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;   
+}
+.card-author {
+    font-size: 0.82rem;
+    color: black;
+}
+.author {
+    color:rgb(97, 97, 102);
+    font-weight: 200;
+}
+.author:hover {
+    text-decoration: none;
+    color: black;
+}
+.card-date {
+    color: rgb(130, 130, 136);
+    font-size: 0.78rem;
+}
+.remove-text-decoration {
+    color: black;
+}
+.remove-text-decoration:hover {
+    text-decoration: none;
+    color: black;
+}
+.remove-text-decoration-2 {
+    color:gray;
+}
+.remove-text-decoration-2:hover {
+    text-decoration: none;
+    color: gray;
+}
+
 .show-main{
     display: flex;
     align-items: center;
@@ -161,7 +165,7 @@ body {
     height:auto;
     position: relative;
     background-color: white;
-    border: 0.5px solid rgba(178, 180, 182,0.7);
+    
     border-radius:3px;
     margin-top: 5px;
     margin-bottom: 50px;
@@ -183,11 +187,17 @@ body {
 }
 
 .user-info{
+    
+    width: 100%;
     font-size: 1rem;
     color: #696D6E;
     padding: 15px 10px 0 10px;
 }
+.shift-right {
+    float: right;
+}
 .post-content{
+    width: 100%;
     padding: 0 10px;
     font-size: 1.1rem;
 }
@@ -195,31 +205,9 @@ body {
     display: flex;
     flex-direction: row;
 }
-.edit-button {
-    max-width: 52px;
-    font-size: 1rem;
-    margin: 5px 10px;
-    padding: 2px 10px;
-    
-    color:black;
-    border:1px solid #2C3232;
-    border-radius: 3px;
 
-}
-.edit-button:hover {
-    border-color: #8A8A7F;
-    color: black;
-    text-decoration: none;
-}
-.delete-button {
-    font-size: 1rem;
-    margin: 5px 10px;
-    padding: 2px 10px;
-    background: white;
-    color:black;
-    border:1px solid rgb(173, 21, 21);
-    border-radius: 3px;
-}
+
+
 .show-comments {
     font-size: 1.2rem;
     margin: 0 10px;
@@ -228,30 +216,35 @@ body {
     margin: 5px 10px;
 }
 .edit-button {
-    max-width: 52px;
-    font-size: 1rem;
-    margin: 5px 10px;
-    padding: 2px 10px;
-    
-    color:black;
-    border:1px solid #2C3232;
-    border-radius: 3px;
+    margin:0 18px 0 10px ;
+   height: 20px;
 
 }
-.edit-button:hover {
-    border-color: #8A8A7F;
-    color: black;
-    text-decoration: none;
+.comment-edit-button {
+    margin:-15px 15px 0 20px ;
+   height: 15px;
+
 }
+.bookmark-button {
+    height: 38px;
+}
+.remove-button-default {
+    outline: none;
+    background: none;
+    border: none;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
 .delete-button {
-    font-size: 1rem;
-    margin: 5px 10px;
-    padding: 2px 10px;
-    background: white;
-    color:black;
-    border:1px solid rgb(173, 21, 21);
-    border-radius: 3px;
+    margin: -10px 10px 0 0;
+    height: 20px;
 }
+.comment-delete-button {
+    margin:-25px 10px 0 0px ;
+    height: 15px;
+}
+
 .comment-button {
     font-size: 1rem;
     margin: 5px 0px;
@@ -262,31 +255,6 @@ body {
     text-decoration: none;
 }
 
-.comment-edit-button {
-    max-width: 45px;
-    font-size: 0.9rem;
-    margin: 5px 6px 5px 10px;
-    padding: 2px 8px;
-    
-    color:black;
-    border:1px solid #2C3232;
-    border-radius: 3px;
-
-}
-.comment-edit-button:hover {
-    border-color: #8A8A7F;
-    color: black;
-    text-decoration: none;
-}
-.comment-delete-button {
-    font-size: 0.9rem;
-    margin: 5px 6px 5px 10px;
-    padding: 2px 8px;
-    background: white;
-    color:black;
-    border:1px solid rgb(173, 21, 21);
-    border-radius: 3px;
-}
 
 .box {
     margin: 80px auto 40px auto;
@@ -315,6 +283,10 @@ body {
     flex-direction: column;
     align-items: center;
 }
+.label-all {
+    color: white;
+    margin-left: 4%;
+}
 .place-holder {
     margin: 0 4% 15px 4%;
     width:92% ;
@@ -324,8 +296,40 @@ body {
     background: white;
     outline: none;
 }
+.place-holder-medium {
+    margin: 0 4% 15px 4%;
+    width:92% ;
+    padding:10px 15px;
+    border-radius: 6px;
+    border: none;
+    background: white;
+    outline: none;
+    height: 180px;
+}
+.place-holder-large {
+    margin: 0 4% 15px 4%;
+    width:92% ;
+    padding:10px 15px;
+    border-radius: 6px;
+    border: none;
+    background: white;
+    outline: none;
+    height: 300px;
+}
 .form-width {
     width: 100%;
+}
+.if-admin {
+    margin-left: 4%;
+    color: white;
+}
+.current-user-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 5px;
 }
 .box-button {
     margin-left: 40%;
@@ -360,6 +364,28 @@ header{
     background:#F8F9FA;
     z-index: 100;
 }
+#search-box{
+    margin: 12px 7px auto 10px;
+    padding:5px;
+    height:30px;
+    border: 0.5px solid rgb(222,224,225);
+    border-radius: 3px;
+    width: 180px;
+}
+.search-logo {
+    height: 25px;
+}
+.sizing-logo {
+    height: 30px;
+}
+.search-button {
+    border:none;
+    background: none;
+    margin-top: 15px;
+    margin-bottom: auto;
+    outline: none;
+}
+button:focus { outline: none; }
 .logo-container,
 .nav-links{
     display: flex;
@@ -373,6 +399,17 @@ header{
     font-size: 1.2rem;
     color: black;
 }
+.hidden-logo {
+    font-weight: 600;
+    margin: 8px;
+    padding: 0px 10px;
+    border: 2px solid black;
+    font-size: 1.5rem;
+    color: white;
+    background: black;
+    display:none;
+}
+
 .logo:hover {
     text-decoration: none;
     color: rgb(19, 18, 18);
@@ -381,7 +418,6 @@ nav{
     flex: 1;
 }
 .nav-links{
-    justify-content: space-around;
     list-style: none;
     margin-top:auto;
     margin-bottom: auto;
@@ -390,13 +426,66 @@ nav{
     color: #5f5f79;
     font-size: 1.05rem;
     text-decoration: none;
-}
-.nav-toggle {
-    display: none;
+    margin-top: 5px;
+    margin-left: 30px;
+    padding-left: 0;
+    padding-right: 0;
 }
 nav a:hover { 
     color: #000000;
 
+}
+.message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.no-result-text {
+    margin: 15px;
+    text-align: center;
+    padding: 20px 20px;
+    background: rgb(204, 224, 230);
+    border-radius: 8px;
+    font-size: 1.5rem;
+    font-weight:500;
+}
+.forgot-password {
+    margin-top: 15px;
+    color: white;
+}
+.forgot-password:hover {
+    color: wheat;
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.alert {
+    text-align: center;
+    width: 80%;
+}
+.bottom-right {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    background: rgba(95, 255, 202, 0.9);
+    border-radius: 50%;
+    padding: 18px;
+    
+}
+.bottom-logo {
+    height: 40px;
+}
+.error-404 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 200px;
+    background: aquamarine;
+    padding: 30px;
+    border-radius: 8px;
 }
 /* .footer-box {
     
@@ -413,112 +502,53 @@ nav a:hover {
     color: white;
 } */
 @media screen and (max-width: 1024px) {
-    
-  
-    .header-class {
-        background: white;
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .alert {
+        
         text-align: center;
-        position: fixed;
-        width: 100%;
-        z-index: 999;
+        
+        width: 80%;
+        
+    }
+    .card-grid{
+        display: grid;
+        grid-gap: 4.2rem 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 0.5fr));
+    }
+    header{
+        background: #F8F9FA;
         border-bottom: 0.5px solid rgb(222,224,225);
+    }
+    .header-class{
+        display:flex;
+        width: 90%;
+        margin: auto auto;
+        height: 70px;
+        align-items: center;
+        background:#F8F9FA;
+        z-index: 100;
     }
 
     .logo-container {
-        justify-content: center;
+        justify-content: left;
 
     } 
-   
-    .nav-links {
-        flex-direction: column;
-    }
-    .nav-toggle {
-        display: none;
-    }
-
-    .nav-toggle-label {
-        position: absolute;
-        top: 0;
-        left: 0;
-        margin-left: 1em;
-        height: 100%;
-        display: flex;
-        align-items: center;
-    }
-    .nav-toggle-label span,
-    .nav-toggle-label span::before,
-    .nav-toggle-label span::after {
-        display: block;
-        background: gray;
-        height: 1.5px;
-        width: 2em;
-        border-radius: 2px;
-        position: relative;
-        
-    }
-    .nav-toggle-label span::before,
-    .nav-toggle-label span::after {
-        content: '';
-        position: absolute;
-       
-    }
-    .nav-toggle-label span::before {
-        bottom: 7px;
-        
-    }
-    .nav-toggle-label span::after {
-        top: 7px;
-       
-    }
-
-    nav {
-        position: absolute;
-        text-align: left;
-        top: 100%;
-        left: 0;
-        background:white;
-        width: 100%;
-        transform: scale(1 ,0);
-        transform-origin: top;
-        transition: transform 400ms ease-in-out;
-    }
-    nav ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-
-    }
-    nav li {
-        margin-bottom: 1em;
-        margin-left: 1em;
-    }
-    nav a {
-        color:gray;
-        text-decoration: none;
-        font-size: 1.2rem;
-        text-transform: uppercase;
-        opacity: 0;
-        transition: opacity 150ms ease-in-out ;
-    }
-    nav a:hover { 
-        color: #000000;
-
-    }
-    .nav-toggle:checked ~ nav {
-        transform: scale(1,1);
-
-    }
-
-    .nav-toggle:checked ~ nav a {
-        opacity: 1;
-        transition: opacity 250ms ease-in-out 250ms;
-    }
-    .box {
-        margin-top: 150px;
-    }
+    
     .heading-text {
         font-size: 2.5rem;
         margin: 4rem auto 20px auto ;
+    }
+    .profile-heading-div {
+        margin:1rem 8% 20px 8% ;
+    }
+    .profile-heading-text {
+      
+        padding-top: 1rem;
+        font-size: 2.35rem;
     }
     .heading-div {
         margin:70px 8% 40px 8% ;
@@ -527,18 +557,53 @@ nav a:hover {
     .cover-card {
         margin: auto 8% ;
     }
-    .show-main {
-        margin-top: 80px;
-    }
+    
     .post-section {
         width: 700px;
     }
     .image-section {
         grid-auto-rows: 420px;
     }
+    .bottom-right {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        background: rgba(95, 255, 202, 0.9);
+        border-radius: 50%;
+        padding: 10px;
+        
+    }
+    .bottom-logo {
+        height: 35px;
+    }
 }
 
 @media screen and (max-width: 870px) {
+    .header-class {
+        height: 60px;
+    }
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .alert {
+       
+        text-align: center;
+       
+        width: 550px;
+        
+    }
+    .nav-link{
+        margin-left: 20px;
+    }
+    .grid-card {
+        margin-left: 3%;
+        margin-right: 3%;
+        width: 94%;
+        border:0.1px solid rgba(173, 171, 171, 0.1);
+        border-radius: 3px;
+    }
     .landing-tagline {
        
         font-size: 3rem;
@@ -548,28 +613,26 @@ nav a:hover {
     }
     .add-campgrounds-button {
         padding: 5px 15px;
-        font-size: 0.98rem;
+        font-size: 0.9rem;
     }
     .box {
        
         width: 500px;
-        margin-top: 150px;
+        
     }
-    .heading-text {
-        font-size: 2rem;
-        margin-top: 3.2rem;
+    
+    .profile-heading-div {
+        margin:0.8rem 5% 15px 5% ;
+    }
+    .profile-heading-text {
         text-align: center;
-        margin-bottom: 10px;
-        /* margin: 3.2rem auto 10px auto ; */
-        padding-left: 10px;
-        padding-right: 10px;
-        text-shadow: 0px 4px 3px rgba(255, 253, 253, 0.2),
-        0px 4px 8px rgba(255, 255, 255, 0.1),
-        0px 6px 9px rgba(255, 255, 255, 0.1)   ;
+        margin-bottom: 5px;
+        padding-top: 0.7rem;
+        font-size: 2rem;
     }
-    .heading-div {
-        margin:70px 5% 40px 5% ;
-
+    .subheading-text{
+        font-size: 1rem;
+        margin-bottom: 10px;
     }
     .cover-card {
         margin: auto 5% ;
@@ -585,9 +648,60 @@ nav a:hover {
     .image-section {
         grid-auto-rows: 370px;
     }
+    .no-result-text {
+        padding: 20px 20px;
+        font-size: 1.3rem;
+    }
+    .background-image {
+        height: 180px;
+        width: 195px;
+    }
 }
 
 @media screen and (max-width: 570px) {
+    .header-class {
+        height: 55px;
+    }
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .logo {
+        display: none;
+    }
+    .hidden-logo {
+        display: block;
+    }
+    #search-box {
+        width: 120px;
+        font-size: 0.85rem;
+        margin-left: 8px;
+        margin-top: 10px;
+    } 
+    .search-logo {
+        height: 20px;
+        margin-bottom: 5px;
+    }
+    .sizing-logo {
+        height: 22px;
+    }
+    .alert {
+        
+        text-align: center;
+        padding-top:9px ;
+        padding-bottom: 9px;
+        margin-bottom: 8px;
+        width: 90%;
+    }
+    .card-grid{
+        display: grid;
+        grid-gap: 4.2rem 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .card-body {
+        font-size: 0.83rem;
+    }
     .landing-tagline {
         text-align: center;
         font-size: 2.7rem;
@@ -599,10 +713,29 @@ nav a:hover {
         margin-top: -10px;
         font-size: 1.2rem;
     }
+    .box-heading {
+        font-size: 1.5rem;
+    }
     .box {
+        position: relative;
+        top: 20px;
         width: 90%;
         margin-left: 5%;
         margin-right: 5%;
+    }
+    .header-class {
+        width: 96%;
+    }
+    .nav-link {
+        font-size: 0.9rem;
+        margin-left: 18px;
+    }
+    .card-heading {
+        font-size: 1.2rem;
+    }
+    .background-image {
+        height: 100px;
+        width: 108px;
     }
     .heading-text {
         font-size: 1.7rem;
@@ -612,15 +745,17 @@ nav a:hover {
         margin:70px 3% 40px 3% ;
 
     }
+    .profile-heading-div {
+        margin:0.8rem 3% 10px 3% ;
+    }
+    .profile-heading-text {
+        text-align: center;
+        padding-top: 0.4rem;
+        font-size: 1.8rem;
+    }
     .subheading-text {
-        font-size: 1.1rem;
-        margin-bottom: 18px;
-    }
-    .cover-card {
-        margin: auto 3% ;
-    }
-    .show-main {
-        margin-top: 50px;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
     }
     .section-heading {
         margin-left:4% ;
@@ -648,11 +783,34 @@ nav a:hover {
         font-size: 1.08rem;
         margin: 0 10px;
     }
-}
-@media screen and (max-width: 330px) {
-    .image-section {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        grid-auto-rows: 220px;
+    .no-result-text {
+        margin-top: 0;
+        padding: 20px 20px;
+        font-size: 1.1rem;
     }
+    .bottom-right {
+        position: fixed;
+        right: 15px;
+        bottom: 15px;
+        background: rgba(95, 255, 202, 0.9);
+        border-radius: 50%;
+        padding: 8px;
+        
+    }
+    .bottom-logo {
+        height: 30px;
+    }
+}
 
+@media screen and (max-width: 370px) {
+    .nav-link {
+        margin-left: 10px;
+        font-size: 0.85rem;
+    }
+    #search-box {
+        width: 110px;
+    }
+    .search-logo {
+        display: none;
+    }
 }

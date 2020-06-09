@@ -4,12 +4,19 @@
         Sign Up
     </div>
     <div class="align-vertical">
-        <form class="form-width" action="/register" method="post">
-            <input class="place-holder" type="text" name="username" placeholder="Username">
-            <input class="place-holder" type="password" name="password" placeholder="Password">
-            <button class="box-button" >Sign Up</button>
+        <form class="form-width" action="/register" method="POST">
+            <label class="label-all" for="username">Username</label>
+            <input class="place-holder" type="text" name="username" placeholder="Username" required>
+            <label class="label-all" for="email">Email</label>
+            <input class="place-holder" type="email" name="email" placeholder="Email" required>
+            <label class="label-all" for="password">Password</label>
+            <input class="place-holder" type="password" name="password" placeholder="Password" pattern=".{6,15}" required title="Password must be 6 to 10 characters long"> 
+            <label class="if-admin" for="admin">If you are an admin</label>
+            <input class="place-holder" id="admin" type="password" name="adminCode" placeholder="Enter Admin Code"> 
+
+            <button type="submit" class="box-button" >Sign Up</button>
         </form>
+        
     </div>
 </div>
 
-<%- include('./partials/footer'); -%>

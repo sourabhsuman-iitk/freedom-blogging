@@ -9,11 +9,13 @@ methodOverride = require("method-override");
 var Campground = require("./models/campground");
 var Comment = require("./models/comment");
 var User = require("./models/user");
-var seedDB = require("./seeds");
 
-var commentRoutes = require("./routes/comments");
+
+
+var commentRoutes = require("./routes/comments");  
 var campgroundRoutes = require("./routes/campgrounds");
 var indexRoutes = require("./routes/index");
+var userRoutes = require("./routes/users")
 
 require('dotenv').config();
 const port = process.env.PORT || 5000;
@@ -32,7 +34,6 @@ connection.once('open', () => {
     console.log("Mongodb database connection established successfully");
 });
  
-//seedDB(); //seed the database
  
 //Passport config
 app.use(require("express-session")({
@@ -56,7 +57,11 @@ app.use(function(req, res, next){
 app.use(indexRoutes);
 app.use("/blogs", campgroundRoutes);
 app.use("/blogs/:id/comments", commentRoutes);
+app.use("/users", userRoutes)
 
+app.use(function(req, res, next){
+    res.status(404).render("error");
+});
 
 app.listen(port, () => {
     console.log('Yelpcamp has started on port');

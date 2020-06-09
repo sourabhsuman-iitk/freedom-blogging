@@ -1,38 +1,51 @@
 <%- include('../partials/header'); -%>
 
 
-<header class="heading-div">
-        <p class="heading-text">
-        Welcome to Freedom Blogging
+<header class="profile-heading-div">
+        <p class="profile-heading-text">
+        Freedom is Here
         </p> 
-        <p class="subheading-text">Collection of our favourite blogs</p>
+        <p class="subheading-text">We write. We share. We learn</p>
         <p>
-            <a class="add-campgrounds-button" href="/blogs/new">Write New Blogs</a>
+            <a class="add-campgrounds-button" href="/blogs/new">Write your own blog</a>
         </p>
 </header>
  
-    
-<div class="cover-card">
-    <div class="card-grid">
-        <% campgrounds.forEach(function(campground){ %>
-            <div class="single-card">
-                <div class="card" style="background-image:url('<%= campground.image %>')">
-                
+<div class="message" >
+    <% if(noMatch !== null) { %>
+    <p class="no-result-text"><%= noMatch %></p>
+    <% } %>
+</div>    
+<div class="blog-index">
+    <% campgrounds.forEach(function(campground){ %>
+    <div class="grid-card">
+       
+            <div class="card-text">
+                <div class="card-heading">
+                    <a class="remove-text-decoration" href="/blogs/<%= campground.slug%>"><%= campground.name %></a> 
                 </div>
-                <div class="text-content">
-                    <p class="campground-name">
-                        <%= campground.name %>
-                    </p>
-                    <a class="more-info-button" href="/blogs/<%= campground._id%>" class="btn btn-primary">Read More</a>
+                <div class="card-body">
+                    <a class="remove-text-decoration-2" href="/blogs/<%= campground.slug%>"> <%= campground.description %></a> 
                 </div>
+                <a class="more-info-button" href="/blogs/<%= campground.slug%>">Read More</a>
+                <div class="card-author">Submitted By <a class="author" href="/users/<%= campground.author.id %>">
+                    <strong><%= campground.author.username %></strong></a> <br><span class="card-date"><%= campground.createdAt.toLocaleDateString() %></span>
+                    <span><a href=""></a><img src="" alt=""></span>
+                </div>
+                        
             </div>
-        <% }); %> 
+            <div class="card-image">
+                <a class="remove-text-decoration-2" href="/blogs/<%= campground.slug%>">
+                    <div class="background-image" style="background-image:url('<%= campground.image %>')">
+    
+                    </div></a> 
+            </div>
+            
+      
+    
     </div>
-    <div class="bottom-margin"></div>
+    <% }); %> 
 </div>
-        
- 
-
 
 
 <%- include('../partials/footer'); -%>

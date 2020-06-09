@@ -1,0 +1,14 @@
+<%- include('./partials/header'); -%>
+<div class="box">
+    <div class="box-heading">
+        Password Reset
+    </div>
+    <div class="align-vertical">
+        <form class="form-width" action="/reset<%= token %>" method="POST">
+            <input type="password" name="password" value="" placeholder="New password" autofocus="autofocus" />
+            <input type="password" name="confirm" value="" placeholder="Confirm password"/>
+            <button type="submit" class="box-button" >Update Password</button>
+        </form>
+    </div>
+</div>
+

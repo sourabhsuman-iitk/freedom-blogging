@@ -36,7 +36,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
                     campground.comments.push(comment);
                     campground.save();
                     req.flash("success", "Successfully created Comment");
-                    res.redirect('/blogs/' + campground._id);
+                    res.redirect('/blogs/' + campground.slug );
                 }
             })
         }
@@ -45,34 +45,43 @@ router.post("/", middleware.isLoggedIn, function(req, res){
 
 //comment edit route
 router.get("/:comment_id/edit", middleware.checkCommentOwnership, function(req, res){
-    Comment.findById(req.params.comment_id, function(err, foundComment){
-        if(err){
-            res.redirect("back");
-        } else {
-            res.render("comments/edit", {campground_id: req.params.id, comment: foundComment });
+    Campground.findById(req.params.id, function(err, foundCampground){
+        if(err || !foundCampground){
+            req.flash("error", "No blog found");
+            return res.redirect("back");
         }
+            var slug = foundCampground["slug"]
+            Comment.findById(req.params.comment_id, function(err, foundComment){
+                if(err){
+                    res.redirect("back");
+                } else {
+                    res.render("comments/edit", {campground_id: req.params.id, comment: foundComment , slug: slug});
+                }
+            });
     });
+    
 });
 
 //comment update route
-router.put("/:comment_id", middleware.checkCommentOwnership, function(req, res){
+router.put("/:comment_id/:slug", middleware.checkCommentOwnership, function(req, res){
     Comment.findByIdAndUpdate(req.params.comment_id, req.body.comment,{new: true}, function(err, updatedComment){
         if(err){
             res.redirect("back");
         } else {
-            res.redirect("/blogs/" + req.params.id);
+            req.flash("success","Comment Edited");
+            res.redirect("/blogs/" + req.params.slug );
         }
     });
 });
 
 // comment delete rooute
-router.delete("/:comment_id", middleware.checkCommentOwnership, function(req, res){
+router.delete("/:comment_id/:slug", middleware.checkCommentOwnership, function(req, res){
     Comment.findByIdAndRemove(req.params.comment_id, function(err){
         if(err){
             res.redirect("back");
         } else {
             req.flash("success","Comment Deleted");
-            res.redirect("/blogs/"+ req.params.id);
+            res.redirect("/blogs/"+ req.params.slug);
         }
     });
 });
