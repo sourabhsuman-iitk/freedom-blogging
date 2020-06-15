@@ -275,6 +275,21 @@ body {
     width: 600px;
     padding-bottom: 20px;
 }
+.box-new-edit {
+    margin: 80px auto 40px auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: #2F2F33;
+    border: 1px solid rgba(178, 180, 182,0.7);
+    border-radius: 8px;
+    width: 700px;
+    padding-bottom: 20px;
+}
+#mceu_13 {
+    margin-bottom: 15px;
+}
 .box-heading {
     font-size: 2rem;
     font-weight:500;
@@ -656,6 +671,9 @@ nav a:hover {
         width: 500px;
         
     }
+    .box-new-edit {
+        width: 500px;
+    }
     
     .profile-heading-div {
         margin:0.8rem 5% 15px 5% ;
@@ -765,6 +783,13 @@ nav a:hover {
         font-size: 1.5rem;
     }
     .box {
+        position: relative;
+        top: 20px;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .box-new-edit{
         position: relative;
         top: 20px;
         width: 90%;

@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
 
     <link rel="stylesheet" href="/stylesheets/main.css">
+    <script src="http://tinymce.cachefly.net/4.0/tinymce.min.js"></script>
+    <script type="application/x-javascript">
+
+        tinymce.init({selector:'#TypeHere'});
+        
+        </script>
     <title>Freedom</title>
 </head>
 <body>
@@ -35,7 +41,6 @@
                         
                     </li>    
                 
-                    <!-- <li> <a class="nav-link" href="/blogs"><img src="https://res.cloudinary.com/sdevblog/image/upload/v1591611351/edit_qg3zrr.png" alt="Blogs" height="28px"></a></li> -->
                     <li> <a class="nav-link" href="/login">Login</a></li>
                     <li> <a class="nav-link " href="/register"> Signup</a></li>
                     <% } else { %>

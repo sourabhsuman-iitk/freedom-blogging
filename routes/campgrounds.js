@@ -17,6 +17,7 @@ var imageFilter = function (req, file, cb) {
 };
 var upload = multer({ storage: storage, fileFilter: imageFilter})
 
+
 var cloudinary = require('cloudinary');
 cloudinary.config({ 
   cloud_name: 'sdevblog', 
@@ -47,29 +48,32 @@ router.get("/", async (req, res) => {
         console.log(err);
     }
 });
-
-router.post("/", middleware.isLoggedIn, upload.single('image'), function(req, res){
-    cloudinary.uploader.upload(req.file.path, function(result) {
-        // add cloudinary url for the image to the campground object under image property
-        req.body.image = result.secure_url;
-        // add author to campground
-        req.body.author = {
-            id: req.user._id,
-            username: req.user.username
+router.post("/", middleware.isLoggedIn, upload.single('image'), function(req, res) {
+    cloudinary.v2.uploader.upload(req.file.path, function(err, result) {
+      if(err) {
+        req.flash('error', err.message);
+        return res.redirect('back');
+      }
+      // add cloudinary url for the image to the campground object under image property
+      req.body.image = result.secure_url;
+      // add image's public_id to campground object
+      req.body.imageId = result.public_id;
+      // add author to campground
+      req.body.author = {
+        id: req.user._id,
+        username: req.user.username
+      }
+      var newCampground = {name: req.body.name, image: req.body.image, imageId: req.body.imageId, content: req.body.content, description: req.body.description, author: req.body.author, slug: req.body.slug}
+      Campground.create(newCampground, function(err, campground) {
+        if (err) {
+          req.flash('error', err.message);
+          return res.redirect('back');
         }
- 
-        var newCampground = {name: req.body.name, image: req.body.image, content: req.body.content, description: req.body.description, author: req.body.author, slug: req.body.slug}
-        Campground.create(newCampground, function(err, campground) {
-            if (err) {
-                req.flash('error', err.message);
-                return res.redirect('back');
-            } else {
-                
-                res.redirect("/blogs");
-            }
-       });
+        res.redirect("/blogs");
+      });
     });
 });
+
 
 router.get("/new", middleware.isLoggedIn, function(req, res){
     res.render("campgrounds/new");
@@ -95,28 +99,55 @@ router.get("/:id/edit", middleware.checkCampgroundOwnership, function(req, res){
 });
 
 //update route
-router.put("/:id", middleware.checkCampgroundOwnership, function(req, res){
-    Campground.findByIdAndUpdate(req.params.id, req.body.campground,{new: true},function(err, updatedCampground){
+router.put("/:id", middleware.checkCampgroundOwnership, upload.single('image'), function(req, res){
+    Campground.findById(req.params.id, async function(err, campground){
         if(err){
-            res.redirect("/blogs");
+            req.flash("error", err.message);
+            res.redirect("back");
         } else {
+            if (req.file) {
+              try {
+                  await cloudinary.v2.uploader.destroy(campground.imageId);
+                  var result = await cloudinary.v2.uploader.upload(req.file.path);
+                  campground.imageId = result.public_id;
+                  campground.image = result.secure_url;
+              } catch(err) {
+                  req.flash("error", err.message);
+                  return res.redirect("back");
+              }
+            }
+            // campground.name = req.body.name;
+            campground.description = req.body.description;
+            campground.content = req.body.content ;
+            campground.save();
             req.flash("success","Blog Updated");
-            res.redirect("/blogs/" + updatedCampground["slug"]);
+            res.redirect("/blogs/" + campground["slug"]);
         }
     });
 });
 
+
 //destroy campground route
-router.delete("/:id", middleware.checkCampgroundOwnership, function(req, res){
-    Campground.findByIdAndRemove(req.params.id, function(err){
-        if(err){
-            res.redirect("/blogs");
-        } else {
-            req.flash("success","Blog Deleted");
-            res.redirect("/blogs");
-        }
+router.delete('/:id', middleware.checkCampgroundOwnership, function(req, res) {
+    Campground.findById(req.params.id, async function(err, campground) {
+      if(err) {
+        req.flash("error", err.message);
+        return res.redirect("back");
+      }
+      try {
+          await cloudinary.v2.uploader.destroy(campground.imageId);
+          campground.remove();
+          req.flash("success","Blog Deleted");
+          res.redirect("/blogs");
+      } catch(err) {
+          if(err) {
+            req.flash("error", err.message);
+            return res.redirect("back");
+          }
+      }
     });
-}); 
+  });
+  
 
 
 function escapeRegex(text) {
