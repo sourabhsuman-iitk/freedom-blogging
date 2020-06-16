@@ -289,6 +289,7 @@ body {
 }
 .tox{
     margin-bottom: 18px;
+    width: 700px;
 }
 .box-heading {
     font-size: 2rem;
@@ -674,6 +675,9 @@ nav a:hover {
     .box-new-edit {
         width: 500px;
     }
+    .tox {
+        width: 500px;
+    }
     
     .profile-heading-div {
         margin:0.8rem 5% 15px 5% ;
@@ -792,6 +796,11 @@ nav a:hover {
     .box-new-edit{
         position: relative;
         top: 20px;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .tox {
         width: 90%;
         margin-left: 5%;
         margin-right: 5%;
