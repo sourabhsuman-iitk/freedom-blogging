@@ -12,7 +12,7 @@ var User = require("./models/user");
 
 
 
-var commentRoutes = require("./routes/comments");  
+var commentRoutes = require("./routes/comments"); 
 var campgroundRoutes = require("./routes/campgrounds");
 var indexRoutes = require("./routes/index");
 var userRoutes = require("./routes/users")

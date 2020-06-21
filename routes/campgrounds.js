@@ -39,7 +39,7 @@ router.get("/", async (req, res) => {
             res.render("campgrounds/index", {campgrounds:allCampgrounds, noMatch: noMatch});
             
         } else {
-            const allCampgrounds = await Campground.find().sort({createdAt: 'desc'});
+            const allCampgrounds = await Campground.find().sort({sortOrder: 'desc'}).sort({createdAt: 'desc'});
             res.render("campgrounds/index", {campgrounds: allCampgrounds, noMatch: noMatch});
         }
         
