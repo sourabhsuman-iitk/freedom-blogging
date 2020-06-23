@@ -32,7 +32,8 @@ var campgroundSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
     }],
-    sortOrder: String
+    sortOrder: String,
+    tag: String
 });
 
 campgroundSchema.pre('validate', function(next){

@@ -18,8 +18,9 @@
 </div>    
 <div class="blog-index">
     <% campgrounds.forEach(function(campground){ %>
+        <% if(!(campground.sortOrder === "0")){ %>
     <div class="grid-card">
-       
+     
             <div class="card-text">
                 <div class="card-heading">
                     <a class="remove-text-decoration" href="/blogs/<%= campground.slug%>"><%= campground.name %></a> 
@@ -30,7 +31,7 @@
                 <a class="more-info-button" href="/blogs/<%= campground.slug%>">Read More</a>
                 <div class="card-author">Submitted By <a class="author" href="/users/<%= campground.author.id %>">
                     <strong><%= campground.author.username %></strong></a> <br><span class="card-date"><%= campground.createdAt.toLocaleDateString() %></span>
-                    <span><a href=""></a><img src="" alt=""></span>
+                    <span class="card-tag">#<%= campground.tag %></span>
                 </div>
                         
             </div>
@@ -42,8 +43,9 @@
             </div>
             
       
-    
+           
     </div>
+    <% }%>
     <% }); %> 
 </div>
 

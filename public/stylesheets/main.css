@@ -130,6 +130,16 @@ body {
     color: rgb(130, 130, 136);
     font-size: 0.78rem;
 }
+.card-tag {
+    float: right;
+    margin-right: 15px;
+    margin-top: -2px;
+    color: rgb(130, 130, 136);
+    font-size: 0.75rem;
+    padding: 0px 5px 1px 5px;
+    border: 1px solid  rgb(130, 130, 136);
+    border-radius: 3px;
+}
 .remove-text-decoration {
     color: black;
 }
@@ -421,7 +431,19 @@ header{
     padding:5px 6px;
     border: 1.8px solid rgb(95,95,121);   
 }
+.follow-button {
+    padding: 2px 5px;
+    border: 1px solid rgb(68, 68, 71);
+    color: rgb(68, 68, 71);
+    margin-left: 10px;
+    font-size: 0.95rem;
+    border-radius: 5px;
+}
+.follow-button:hover {
+    color: black;
 
+    text-decoration: none;
+}
 .search-button {
     border:none;
     background: none;
